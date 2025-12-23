@@ -1,0 +1,59 @@
+name: WeaponStatsPlugin
+version: 1.0.0
+main: com.weaponstats.WeaponStatsPlugin
+api-version: "1.21"
+author: glgqqe
+description: Plugin for tracking weapon kills and damage statistics
+
+commands:
+  weaponstats:
+    description: Apply weapon statistics templates
+    usage: /<command> [kills|damage]
+    aliases: [ws, wstats]
+    permission: weaponstats.command.use
+    permission-message: §cУ вас нет прав на использование этой команды!
+
+permissions:
+  weaponstats.*:
+    description: Все права плагина WeaponStats
+    default: op
+    children:
+      weaponstats.command.*: true
+      weaponstats.craft.*: true
+      weaponstats.use.*: true
+  weaponstats.command.*:
+    description: Все команды плагина
+    default: op
+    children:
+      weaponstats.command.use: true
+      weaponstats.command.kills: true
+      weaponstats.command.damage: true
+  weaponstats.command.use:
+    description: Использование команды /weaponstats
+    default: op
+  weaponstats.command.kills:
+    description: Получение шаблона отслеживания убийств через команду
+    default: op
+  weaponstats.command.damage:
+    description: Получение шаблона отслеживания урона через команду
+    default: op
+  weaponstats.craft.*:
+    description: Все крафты плагина
+    default: true
+    children:
+      weaponstats.craft.kills: true
+      weaponstats.craft.damage: true
+  weaponstats.craft.kills:
+    description: Крафт шаблона отслеживания убийств
+    default: true
+  weaponstats.craft.damage:
+    description: Крафт шаблона отслеживания урона
+    default: true
+  weaponstats.use.*:
+    description: Использование шаблонов
+    default: true
+    children:
+      weaponstats.use.template: true
+  weaponstats.use.template:
+    description: Применение шаблонов на оружие
+    default: true

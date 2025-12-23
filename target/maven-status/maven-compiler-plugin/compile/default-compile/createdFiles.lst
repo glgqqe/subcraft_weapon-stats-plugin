@@ -1,0 +1,6 @@
+com/weaponstats/TemplateItem.class
+com/weaponstats/StatsListener.class
+com/weaponstats/WeaponStatsPlugin.class
+com/weaponstats/WeaponStatsCommand.class
+com/weaponstats/TemplateManager.class
+com/weaponstats/CraftingManager.class
